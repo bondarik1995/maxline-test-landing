@@ -1,6 +1,7 @@
 import React from "react";
-import closedEye from "../../assets/images/closed-eye.svg";
-import openedEye from "../../assets/images/opened-eye.svg";
+import { isValidPhoneNumber } from "react-phone-number-input";
+import PhoneField from "./PhoneField";
+import PasswordField from "./PasswordField";
 import styles from "./Form.module.css";
 
 const INIT_VALUES = {
@@ -20,10 +21,12 @@ const MIN_PASSWORD_LENGTH = 6;
 const Form = () => {
   const [values, setValues] = React.useState(INIT_VALUES);
   const [errors, setErrors] = React.useState(INIT_ERRORS);
-  const [passwordFieldType, setPasswordFieldType] = React.useState("password");
 
   const handleInput = (name) => (e) => {
-    setValues((prev) => ({ ...prev, [name]: e.target.value }));
+    setValues((prev) => ({
+      ...prev,
+      [name]: name === "phone" ? e : e.target.value,
+    }));
   };
 
   const handleCheckbox = (name) => (e) => {
@@ -38,6 +41,8 @@ const Form = () => {
 
     if (!phone) {
       newErrors.phone = "Обязательно к заполнению";
+    } else if (!isValidPhoneNumber(phone)) {
+      newErrors.phone = "Введите корректный номер телефона";
     }
     if (!password) {
       newErrors.password = "Обязательно к заполнению";
@@ -60,52 +65,21 @@ const Form = () => {
     }
   };
 
-  const handlePasswordClick = () => {
-    setPasswordFieldType((prev) => (prev === "password" ? "text" : "password"));
-  };
-
   return (
     <form className={styles.container} onSubmit={handleSubmit}>
       <div className={styles.main}>
         <p className={styles.title}>Регистрация</p>
         <div className={styles.inputList}>
-          <div className={styles.inputItem}>
-            <label htmlFor="phone">Номер телефона</label>
-            <input
-              type="text"
-              id="phone"
-              value={values.phone}
-              name="phone"
-              placeholder="+375"
-              onChange={handleInput("phone")}
-            />
-            {!!errors.phone && (
-              <p className={styles.errorMessage}>{errors.phone}</p>
-            )}
-          </div>
-          <div className={styles.inputItem}>
-            <label htmlFor="pwd">Пароль</label>
-            <div className={styles.passwordField}>
-              <input
-                type={passwordFieldType}
-                id="pwd"
-                value={values.password}
-                placeholder="Придумайте пароль"
-                name="password"
-                onChange={handleInput("password")}
-              />
-              <button type="button" onClick={handlePasswordClick}>
-                {passwordFieldType === "password" ? (
-                  <img src={closedEye} alt="Показать пароль" />
-                ) : (
-                  <img src={openedEye} alt="Скрыть пароль" />
-                )}
-              </button>
-            </div>
-            {!!errors.password && (
-              <p className={styles.errorMessage}>{errors.password}</p>
-            )}
-          </div>
+          <PhoneField
+            value={values.phone}
+            onChange={handleInput("phone")}
+            error={errors.phone}
+          />
+          <PasswordField
+            value={values.password}
+            onChange={handleInput("password")}
+            error={errors.password}
+          />
         </div>
         <div className={styles.checkboxList}>
           <div className={styles.checkboxItem}>

@@ -49,9 +49,6 @@
   font-size: 13px;
 }
 
-.inputItem label {
-}
-
 .inputItem input {
   padding: 11px 14px;
   background-color: #F1F3F6;
@@ -178,6 +175,32 @@
   background: transparent;
   border: 0;
   cursor: pointer;
+}
+
+.phoneInput {
+  background-color: #F1F3F6;
+  border: 1px solid #E8EAF0;
+  border-radius: 6px;
+}
+
+.phoneInput > div {
+  padding: 9px 13px;
+  margin: 0;
+  background-color: #FFFFFF;
+  border-radius: 6px;
+}
+
+.phoneInput > div select ~ div {
+  box-shadow: none;
+}
+
+.phoneInput > div > div:last-child {
+  display: none;
+}
+
+.phoneInput input {
+  padding: 11px 14px;
+  border: none;
 }
 
 @media only screen and (min-width: 1024px) {
