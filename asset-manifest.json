@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/maxline-test-landing/static/css/main.8bd7e83f.css",
+    "main.css": "/maxline-test-landing/static/css/main.df4fdf4c.css",
     "main.js": "/maxline-test-landing/static/js/main.9a0921ff.js",
     "static/media/Gold-lg.png": "/maxline-test-landing/static/media/Gold-lg.04d3cae0165ca8d17f2c.png",
     "static/media/olympus-lg.png": "/maxline-test-landing/static/media/olympus-lg.759a53f9fcd1c438b718.png",
@@ -21,11 +21,11 @@
     "static/media/closed-eye.svg": "/maxline-test-landing/static/media/closed-eye.7c75b258dff50e893a4bd20bdfaf104d.svg",
     "index.html": "/maxline-test-landing/index.html",
     "static/media/check.svg": "/maxline-test-landing/static/media/check.04761e19d62e404e6007.svg",
-    "main.8bd7e83f.css.map": "/maxline-test-landing/static/css/main.8bd7e83f.css.map",
+    "main.df4fdf4c.css.map": "/maxline-test-landing/static/css/main.df4fdf4c.css.map",
     "main.9a0921ff.js.map": "/maxline-test-landing/static/js/main.9a0921ff.js.map"
   },
   "entrypoints": [
-    "static/css/main.8bd7e83f.css",
+    "static/css/main.df4fdf4c.css",
     "static/js/main.9a0921ff.js"
   ]
 }
