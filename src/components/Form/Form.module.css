@@ -1,0 +1,236 @@
+.container {
+  position: relative;
+  z-index: 1;
+  margin-top: 220px;
+}
+
+.container::before {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  top: -116px;
+  right: calc(50% - 296px);
+  display: block;
+  width: 235px;
+  height: 234px;
+  background-image: url(../../assets/images/Gold.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.main {
+  padding: 36px 48px;
+  color: #BBC6F2;
+  background-color: #0F0219;
+  border-radius: 24px 24px 0 0;
+}
+
+.title {
+  margin-top: 0;
+  margin-bottom: 22px;
+  color: #fff;
+  font-size: 22px;
+  line-height: 26px;
+  font-weight: 500;
+}
+
+.inputList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 22px;
+}
+
+.inputItem {
+  display: flex;
+  flex-direction: column;
+  gap: 3.5px;
+  font-size: 13px;
+}
+
+.inputItem label {
+}
+
+.inputItem input {
+  padding: 11px 14px;
+  background-color: #F1F3F6;
+  border: 1px solid #E8EAF0;
+  border-radius: 6px;
+}
+
+.inputItem input:hover,
+.inputItem input:focus-visible {
+  border-color: #5AB828;
+  outline: none;
+}
+
+.inputItem.error input {
+  border-color: #F91717;
+}
+
+.errorMessage {
+  margin: 0;
+  color: #F91717;
+}
+
+.checkboxList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 22px;
+}
+
+.checkboxItem {
+  font-size: 11px;
+}
+
+.checkboxItem p {
+  margin: 0;
+}
+
+.checkboxItem a {
+  color: inherit;
+  transition: all 0.5s;
+}
+
+.checkboxItem a:hover {
+  text-decoration: none;
+}
+
+.checkboxItem input{
+  display: none;
+}
+
+.checkboxItem label {
+  position: relative;
+  display: block;
+  padding-left: 26px;
+}
+
+.checkboxItem label::before,
+.checkboxItem label::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: calc(50% - 9px);
+  display: block;
+  width: 18px;
+  height: 18px;
+  border-radius: 4px;
+}
+
+.checkboxItem label::before{
+  background-color: #F1F3F6;
+  border: 1px solid #E8EAF0;
+}
+
+.checkboxItem input:checked ~ label::before{
+  background-color: #5AB828;
+  border-color: #5AB828;
+}
+
+.checkboxItem input:checked ~ label::after{
+  background-image: url(../../assets/images/check.svg);
+  background-position: 4.5px 6px;
+  background-repeat: no-repeat;
+}
+
+.button {
+  width: 100%;
+  padding: 15px;
+  font-size: 13px;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  background-color: #5AB828;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+.button:hover {
+  background-color: #4BD700;
+  box-shadow: 0px 0px 15px 0px #4BD70080;
+}
+
+.button:active {
+  background-color: #4DA41E;
+}
+
+.passwordField {
+  position: relative;
+}
+
+.passwordField input {
+  width: 100%;
+  padding-right: 38px;
+  box-sizing: border-box;
+}
+
+.passwordField button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0;
+  width: 38px;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
+@media only screen and (min-width: 1024px) {
+  .container {
+    position: fixed;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 30%;
+    margin-top: 0;
+  }
+
+  .container::before {
+    top: -1304px;
+    left: -318px;
+    right: auto;
+    z-index: 0;
+    width: 835.28px;
+    height: 1668px;
+    background-image: url(../../assets/images/Gold-lg.png);
+  }
+
+  .container::after {
+    content: "";
+    position: absolute;
+    bottom: -104.79px;
+    left: -352.42px;
+    z-index: 0;
+    display: block;
+    width: 280.37px;
+    height: 277.79px;
+    background-image: url(../../assets/images/Gold2-lg.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    padding: 25px;
+    box-sizing: border-box;
+    border-radius: 0;
+    background-color: #000000b3;
+    backdrop-filter: blur(5px);
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .main {
+    padding: 100px;
+  }
+}
