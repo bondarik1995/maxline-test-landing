@@ -47,6 +47,23 @@
 
   .container::before {
     top: auto;
+    bottom: 0;
+    left: 65px;
+  }
+
+  .container::after {
+    top: auto;
+    left: -240px;
+    bottom: 0;
+  }
+
+  .promo {
+    position: relative;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .container::before {
     bottom: -134px;
     left: 0;
     width: 835.28px;
@@ -55,15 +72,10 @@
   }
 
   .container::after {
-    top: auto;
     left: -513px;
     bottom: -63.48px;
     width: 1075.32px;
     height: 798.48px;
     background-image: url(../assets/images/fire-bowl-lg.png);
-  }
-
-  .promo {
-    position: relative;
   }
 }
