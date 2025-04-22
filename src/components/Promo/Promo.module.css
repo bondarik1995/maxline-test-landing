@@ -39,19 +39,25 @@
 }
 
 @media only screen and (min-width: 1024px) {
+  .container {
+    position: fixed;
+    width: 100%;
+    top: calc(50% - 157px);
+  }
+
   .image {
-    padding-top: 179.15px;
-    width: 515px;
+    padding-top: 0;
+    width: 460px;
   }
 
   .image::before {
-    top: 172px;
-    background-size: 570px;
-    background-position: -30px 0px;
+    top: 0;
+    background-size: 510px;
+    background-position: -27px -7px;
   }
 
   .imageSubtitle {
-    width: 330px;
+    width: 300px;
     margin-top: -45px;
   }
 }
@@ -59,12 +65,11 @@
 @media only screen and (min-width: 1440px) {
   .image {
     width: 814px;
-    /* height: 456px; */
   }
 
   .image::before {
     background-size: 814px;
-    background-position: -10px 0px;
+    background-position: -10px -12px;
   }
 
   .imageSubtitle {
